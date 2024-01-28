@@ -1,6 +1,0 @@
-- hosts: server
-  become: true
-  roles:
-    - role: watchtower
-      vars:
-        service_cfg: "{{ watchtower }}"
