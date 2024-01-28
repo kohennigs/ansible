@@ -1,0 +1,7 @@
+ansible_user: pi
+admin:
+  name: pi
+  key: "{{ lookup('file', '~/.ssh/pi1.25519.pub') }}"
+  email: "kai.hennigs@gmail.com"
+locale: de_DE.UTF-8
+timezone: Europe/Berlin
