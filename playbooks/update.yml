@@ -1,0 +1,18 @@
+---
+  - hosts: pis
+    ignore_errors: yes
+    ignore_unreachable: yes
+
+    tasks:
+    - name: update apt repositories and cache
+      become: true
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: update all apt packages
+      become: true
+      apt: upgrade=dist force_apt_get=yes
+
+    - name: remove dependencies that are no longer required
+      become: true
+      apt:
+        autoremove: yes
